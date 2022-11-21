@@ -34,4 +34,12 @@ string itc_three_str(string str1, string str2, string str3);
 
 int itc_max_char_on_end(const string &str);
 
+//_________________
+
+bool isLowerCase(char a);
+
+bool isUpperCase(char a);
+
+long long max_repeating(const string &str, string repeater);
+
 #endif //UNTITLED_STR_EASY_H
