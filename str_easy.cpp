@@ -1,4 +1,3 @@
-
 #include "str_easy.h"
 
 string itc_hello_str(const string &name) {
@@ -19,7 +18,7 @@ void itc_print_copy_str(const string &str, int number) {
 }
 
 void itc_first_end_three(string str) {
-    long long int length = itc_len(str);
+    int length = (int) itc_len(str);
     if (length > 5) {
         cout
                 << str[0]
@@ -106,9 +105,39 @@ string itc_cmp_str(const string &str1, const string &str2, int num) {
 }
 
 int itc_find_str(string str1, string str2) {
-    for (const auto &item: str1) {
-
+    long long str1Length = itc_len(str1);
+    long long str2Length = itc_len(str2);
+    if (str2Length > str1Length)
+        return -1;
+    int startIndex = -1;
+    int consecutive = 0;
+    for (int i = 0; i < str1Length; i++) {
+        if (consecutive >= str2Length)
+            break;
+        if (str1[i] == str2[consecutive]) {
+            if (consecutive == 0)
+                startIndex = i;
+            consecutive++;
+        }
+        else {
+            startIndex = -1;
+            consecutive = 0;
+        }
     }
+    return startIndex;
+}
+
+string itc_three_str(string str1, string str2, string str3) {
+    int index = itc_find_str(str1, str2);
+    long long len = itc_len(str2);
+    long long replacerLen = itc_len(str1);
+    while (index != -1) {
+        string a = itc_slice_str(str1, 0, index - 1);
+        string b = itc_slice_str(str1, index + len, replacerLen);
+        str1 = a + str3 + b;
+        index = itc_find_str(str1, str2);
+    }
+    return str1;
 }
 
 long long max(long long a, long long b) {

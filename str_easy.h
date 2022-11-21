@@ -1,7 +1,3 @@
-//
-// Created by Sch1561-it-30 on 14.11.2022.
-//
-
 #ifndef UNTITLED_STR_EASY_H
 #define UNTITLED_STR_EASY_H
 
