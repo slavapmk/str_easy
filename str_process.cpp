@@ -1,15 +1,31 @@
 #include "str_easy.h"
 
 string itc_even_place(const string &str) {
-    long long i = 0;
+
+    long long len = itc_len(str);
+
+    if (len < 2)
+
+        return "-1";
+
     string result;
-    for (const auto &item: str) {
-        if (i % 2 == 0)
-            result += item;
-        i++;
-    }
+
+    for (long long i = 1; i < len; i+= 2)
+
+        result += str[i];
+
     return result;
+
 }
+    
+    
+    
+        
+            
+ 
+
+    
+
 
 string itc_reverse_str(const string &str) {
     string result;
