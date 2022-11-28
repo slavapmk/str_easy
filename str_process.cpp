@@ -10,21 +10,13 @@ string itc_even_place(const string &str) {
 
     string result;
 
-    for (long long i = 1; i < len; i+= 2)
+    for (long long i = 1; i < len; i += 2)
 
         result += str[i];
 
     return result;
 
 }
-    
-    
-    
-        
-            
- 
-
-    
 
 
 string itc_reverse_str(const string &str) {
@@ -48,9 +40,9 @@ string itc_slice_str(const string &str, int start, int end) {
     return result;
 }
 
-string itc_cmp_str(const string &str1, const string &str2, int num) {
+string itc_cmp_str(string str1, string str2, int num) {
     string first = itc_slice_str(str1, 0, num - 1);
-    string third = itc_slice_str(str1, num, (int) itc_len(str1) - 1);
+    string third = itc_slice_str(str1, num, (int) (itc_len(str1) - itc_len(str2)) - 1);
     return first + str2 + third;
 }
 
